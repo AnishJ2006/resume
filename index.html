@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anya Sharma | Futuristic Tech Portfolio</title>
+    <!-- Load Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" xintegrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    
+    <style>
+        /* Define Futuristic Colors and Style */
+        :root {
+            --primary-dark: #121212; /* Deep background */
+            --secondary-bg: #1f1f1f;                                                                                                                         /* Card background */
+            --accent-neon: #00FFFF; /* Electric Cyan */
+            --link-hover: #00BFFF; /* Bright blue for hover */
+            --shadow-color: rgba(23, 61, 61, 0.674); /* Neon shadow */
+        }
+
+        body {    
+            background-color: var(--primary-dark);
+            color: #f3f3f3;
+            scroll-behavior: smooth;
+        }
+
+        .navbar {
+            background-color: var(--secondary-bg) !important;
+            border-bottom: 2px solid var(--accent-neon);
+        }
+
+        /* Hero Text Effect */
+        .neon-text {
+            color: var(--accent-neon);
+            text-shadow: 0 0 5px var(--accent-neon), 0 0 10px var(--accent-neon);
+        }
+
+        /* Section Headings */
+        .section-heading-futuristic {
+            border-bottom: 3px solid var(--accent-neon);
+            padding-bottom: 5px;
+            display: inline-block;
+            color: white;
+            text-shadow: 0 0 3px var(--accent-neon);
+        }
+
+        /* Card Style for Futuristic Look */
+        .futuristic-card {
+            background-color: var(--secondary-bg);
+            border: 1px solid var(--accent-neon);
+            box-shadow: 0 0 10px var(--shadow-color);
+            transition: box-shadow 0.3s ease, transform 0.3s ease;
+        }
+        .futuristic-card:hover {
+            box-shadow: 0 0 15px var(--accent-neon), 0 0 25px var(--shadow-color);
+            transform: translateY(-3px);
+        }
+
+        /* Accent Button Style */
+        .btn-neon-accent {
+            background-color: var(--accent-neon);
+            color: var(--primary-dark);
+            font-weight: bold;
+            border: none;
+            transition: background-color 0.3s, box-shadow 0.3s;
+        }
+        .btn-neon-accent:hover {
+            background-color: var(--link-hover);
+            box-shadow: 0 0 8px var(--accent-neon);
+            color: var(--primary-dark);
+        }
+        
+        .research-portal-link {
+            background-color: #FF7F50; /* Keep orange for differentiation */
+            color: white;
+            border: 2px solid #FF7F50;
+        }
+        .research-portal-link:hover {
+            background-color: #FF6347;
+            border-color: #FF6347;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top shadow-lg">
+        <div class="container">
+            <a href="#home" class="navbar-brand fs-2 fw-bold text-white">
+                Anish <span class="neon-text">Jaiswal</span>
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav gap-3">
+                    <li class="nav-item"><a href="#about" class="nav-link text-white">About</a></li>
+                    <li class="nav-item"><a href="#skills" class="nav-link text-white">Skills</a></li>
+                    <li class="nav-item"><a href="#projects" class="nav-link text-white">Projects</a></li>
+                    <li class="nav-item"><a href="#certificates" class="nav-link text-white">Certificates</a></li>
+                    <li class="nav-item">
+                        <a href="research.html" class="btn btn-sm research-portal-link">
+                            Research Portal
+                        </a>
+                    </li>
+                    <li class="nav-item"><a href="#contact" class="nav-link text-white">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <!-- 1. Hero Section -->
+        <section id="home" class="py-5 py-md-5 py-lg-6 text-center border-bottom border-secondary" style="background-color: var(--primary-dark);">
+            <div class="container my-5">
+                <h1 class="display-3 fw-bolder mb-3 text-white">
+                    Aspiring Engineer & <span class="neon-text">Research Enthusiast</span>
+                </h1>
+                <p class="fs-4 mb-4 text-secondary">
+                    B.Tech-CSE 2nd year Student  | Seeking opportunities in AI/ML Development and Interdisciplinary Research.
+                </p>
+                <a href="#projects" class="btn btn-lg btn-neon-accent shadow-lg">
+                    View Key Projects
+                </a>
+            </div>
+        </section>
+
+        <!-- 2. About Me Section -->
+        <section id="about" class="py-5 py-md-6">
+            <div class="container px-4 px-lg-5 col-lg-8 mx-auto">
+                <div class="text-center mb-5">
+                    <h2 class="fs-1 fw-bold section-heading-futuristic">ABOUT ME</h2>
+                </div>
+                <p class="fs-5 mb-4 text-center">
+                    I am Anish Jaiswal, a 2nd year B.Tech student with a deep commitment to both academic excellence and practical problem-solving. My coursework has provided a strong foundation in algorithms and data structures, which I actively apply in real-world projects.
+                </p>
+                <p class="fs-6 text-center text-secondary">
+                    I thrive on curiosity, which led me to become a passionate Research Enthusiast. I am keen on exploring how cutting-edge technology can address global challenges, particularly in areas like sustainable computing and ethical AI development. I am currently seeking full-time roles or research positions starting in 2026.
+                </p>
+            </div>
+        </section>
+
+        <!-- 3. Skills Section -->
+        <section id="skills" class="py-5 py-md-6" style="background-color: var(--secondary-bg);">
+            <div class="container px-4 px-lg-5">
+                <div class="text-center mb-5">
+                    <h2 class="fs-1 fw-bold section-heading-futuristic">TECHNICAL SKILLS</h2>
+                </div>
+                <div class="row row-cols-2 row-cols-sm-3 row-cols-lg-5 g-4 mx-auto" style="max-width: 900px;">
+                    <!-- Skills Grid - 10 Skills -->
+                    <div class="col">
+                        <div class="p-4 rounded-3 text-center futuristic-card">
+                            <span class="fs-5 fw-bold text-white">Python</span>
+                        </div>
+                    </div>
+                     <div class="col">
+                        <div class="p-4 rounded-3 text-center futuristic-card">
+                            <span class="fs-5 fw-bold text-white">C++</span>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="p-4 rounded-3 text-center futuristic-card">
+                            <span class="fs-5 fw-bold text-white">TensorFlow</span>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="p-4 rounded-3 text-center futuristic-card">
+                            <span class="fs-5 fw-bold text-white">React/JS</span>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="p-4 rounded-3 text-center futuristic-card">
+                            <span class="fs-5 fw-bold text-white">SQL</span>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="p-4 rounded-3 text-center futuristic-card">
+                            <span class="fs-5 fw-bold text-white">Git/GitHub</span>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="p-4 rounded-3 text-center futuristic-card">
+                            <span class="fs-5 fw-bold text-white"> HTML</span>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="p-4 rounded-3 text-center futuristic-card">
+                            <span class="fs-5 fw-bold text-white">CSS</span>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="p-4 rounded-3 text-center futuristic-card">
+                            <span class="fs-5 fw-bold text-white">Bootstrap</span>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="p-4 rounded-3 text-center futuristic-card">
+                            <span class="fs-5 fw-bold text-white">Research</span>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="p-4 rounded-3 text-center futuristic-card">
+                            <span class="fs-5 fw-bold text-white">Python-lib</span>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="p-4 rounded-3 text-center futuristic-card">
+                            <span class="fs-5 fw-bold text-white">Pytorch
+                            </span>
+                        </div>
+                    </div>
+                     <div class="col">
+                        <div class="p-4 rounded-3 text-center futuristic-card">
+                            <span class="fs-5 fw-bold text-white">Public Speaking </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Projects Section -->
+        <section id="projects" class="py-5 py-md-6">
+            <div class="container px-4 px-lg-5">
+                <div class="text-center mb-5">
+                    <h2 class="fs-1 fw-bold section-heading-futuristic">KEY PROJECTS</h2>
+                </div>
+
+                <div class="row g-4 mx-auto" style="max-width: 1000px;">
+
+                    <!-- Project Card 1: E-commerce Recommendation System -->
+                    <div class="col-md-6">
+                        <div class="p-4 rounded-3 futuristic-card border-start border-5 border-info">
+                            <h3 class="fs-4 fw-bold mb-2 neon-text">ML-Powered Recommendation System</h3>
+                            <p class="text-secondary mb-3">Developed a collaborative filtering model in Python using Pandas and Scikit-learn to suggest personalized products, resulting in a 15% improvement in click-through rate in simulations.</p>
+                            <p class="small fw-semibold text-secondary">
+                                <span class="text-white">Tech Stack:</span> Python, Scikit-learn, FastAPI, MongoDB.
+                            </p>
+                            <div class="mt-3 d-flex justify-content-start gap-4">
+                                <a href="#" class="text-info fw-bold text-decoration-none">GitHub Link &rarr;</a>
+                                <a href="#" class="text-white fw-bold text-decoration-none">Live Demo &rarr;</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project Card 2: IoT Smart Home Energy Monitor -->
+                    <div class="col-md-6">
+                        <div class="p-4 rounded-3 futuristic-card border-start border-5 border-info">
+                            <h3 class="fs-4 fw-bold mb-2 neon-text">Real-Time Energy Monitoring System</h3>
+                            <p class="text-secondary mb-3">Designed an IoT solution using an ESP32 micro-controller and a React dashboard to track household energy consumption, demonstrating significant potential for waste reduction.</p>
+                            <p class="small fw-semibold text-secondary">
+                                <span class="text-white">Tech Stack:</span> C++, React.js, Node.js, Firebase.
+                            </p>
+                             <div class="mt-3 d-flex justify-content-start gap-4">
+                                <a href="#" class="text-info fw-bold text-decoration-none">GitHub Link &rarr;</a>
+                                <a href="#" class="text-white fw-bold text-decoration-none">Documentation &rarr;</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. Certificates Section -->
+        <section id="certificates" class="py-5 py-md-6" style="background-color: var(--secondary-bg);">
+            <div class="container px-4 px-lg-5">
+                <div class="text-center mb-5">
+                    <h2 class="fs-1 fw-bold section-heading-futuristic">CERTIFICATES</h2>
+                    <p class="lead text-muted mt-2">Validated learning in specialized domains.</p>
+                </div>
+
+                <div class="row g-4 mx-auto" style="max-width: 1000px;">
+                    <!-- Cert 1 -->
+                    <div class="col-lg-4 col-sm-6">
+                        <div class="p-4 rounded-3 futuristic-card d-flex align-items-center">
+                            <div class="fs-3 text-info me-3">
+                                <!-- Icon: Checkmark -->
+                                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-check-square"><polyline points="9 11 12 14 22 4"></polyline><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path></svg>
+                            </div>
+                            <div>
+                                <p class="fw-semibold mb-0 text-white">Participation certificate</p>
+                                <span class="small text-secondary">KALPATHON</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Cert 2 -->
+                    <div class="col-lg-4 col-sm-6">
+                        <div class="p-4 rounded-3 futuristic-card d-flex align-items-center">
+                            <div class="fs-3 text-info me-3">
+                                <!-- Icon: Checkmark -->
+                                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-check-square"><polyline points="9 11 12 14 22 4"></polyline><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path></svg>
+                            </div>
+                            <div>
+                                <p class="fw-semibold mb-0 text-white">1st runner-up</p>
+                                <span class="small text-secondary">Cine-AI EDGE 2025</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Cert 3 -->
+                    <div class="col-lg-4 col-sm-6">
+                        <div class="p-4 rounded-3 futuristic-card d-flex align-items-center">
+                            <div class="fs-3 text-info me-3">
+                                <!-- Icon: Checkmark -->
+                                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-check-square"><polyline points="9 11 12 14 22 4"></polyline><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path></svg>
+                            </div>
+                            <div>
+                                <p class="fw-semibold mb-0 text-white">Web Development Bootcamp</p>
+                                <span class="small text-secondary">Udemy</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. Contact Section -->
+        <section id="contact" class="py-5 py-md-6">
+            <div class="container px-4 px-lg-5 col-lg-6 mx-auto">
+                <div class="text-center mb-5">
+                    <h2 class="fs-1 fw-bold section-heading-futuristic">GET IN TOUCH</h2>
+                    <p class="lead text-muted mt-2">I am actively seeking internships and full-time positions.</p>
+                </div>
+
+                <div class="p-4 p-md-5 rounded-3 futuristic-card border-info">
+                    <form id="contact-form-btech" class="row g-3">
+                        <div class="col-12">
+                            <label for="name-btech" class="form-label text-white">Name</label>
+                            <input type="text" id="name-btech" name="name" required class="form-control bg-dark border-secondary text-white">
+                        </div>
+                        <div class="col-12">
+                            <label for="email-btech" class="form-label text-white">Email</label>
+                            <input type="email" id="email-btech" name="email" required class="form-control bg-dark border-secondary text-white">
+                        </div>
+                        <div class="col-12">
+                            <label for="message-btech" class="form-label text-white">Message</label>
+                            <textarea id="message-btech" name="message" rows="4" required class="form-control bg-dark border-secondary text-white" placeholder="I'm reaching out about a job opportunity or internship..."></textarea>
+                        </div>
+                        
+                        <!-- Gemini Feature Button and Status -->
+                        <div class="col-12 d-flex justify-content-between align-items-center mt-2 mb-3">
+                            <button type="button" id="polish-button" class="btn btn-sm btn-neon-accent shadow-sm">
+                                ✨ Polish Message Draft
+                            </button>
+                            <span id="polish-status" class="small text-info d-none">Transmission initiated...</span>
+                        </div>
+
+                        <div class="col-12">
+                            <button type="submit" class="btn btn-neon-accent w-100 shadow-lg">
+                                Send Message
+                            </button>
+                        </div>
+                    </form>
+
+                    <div id="status-message-btech" class="mt-4 p-3 rounded-3 text-center d-none" role="alert"></div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-center py-4 border-top border-secondary">
+        <div class="container">
+            <p class="mb-0 small text-secondary-dark">&copy; 2025 Anish Jaiswal | All rights reserved </p>
+       
+        </div>
+    </footer>
+
+    <!-- Load Bootstrap 5 JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" xintegrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    
+    <!-- JavaScript for Interactivity -->
+    <script>
+        // --- Gemini API Setup ---
+        const API_URL = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-05-20:generateContent?key=';
+        const apiKey = "AIzaSyCQBJRxV3B9NKPv_ZokhCyNtK3ZFtdEgh4"; // Canvas will provide the key at runtime
+
+        // Function for exponential backoff fetch to handle potential API limits
+        async function exponentialBackoffFetch(url, options, maxRetries = 5) {
+            for (let attempt = 0; attempt < maxRetries; attempt++) {
+                try {
+                    const response = await fetch(url, options);
+                    if (!response.ok) {
+                        // Retry on rate limit errors (429)
+                        if (response.status === 429 && attempt < maxRetries - 1) {
+                            const delay = Math.pow(2, attempt) * 1000 + Math.random() * 1000;
+                            await new Promise(resolve => setTimeout(resolve, delay));
+                            continue;
+                        }
+                        throw new Error(`HTTP error! status: ${response.status}`);
+                    }
+                    return response.json();
+                } catch (error) {
+                    if (attempt === maxRetries - 1) {
+                        throw error;
+                    }
+                    const delay = Math.pow(2, attempt) * 1000 + Math.random() * 1000;
+                    await new Promise(resolve => setTimeout(resolve, delay));
+                }
+            }
+        }
+        
+        // Function to call Gemini API for polishing the message
+        async function polishMessageDraft() {
+            const messageTextarea = document.getElementById('message-btech');
+            const polishButton = document.getElementById('polish-button');
+            const polishStatus = document.getElementById('polish-status');
+            const statusMessageBTech = document.getElementById('status-message-btech');
+            const originalText = messageTextarea.value.trim();
+
+            // Minimal client-side validation
+            if (originalText.length < 20) {
+                statusMessageBTech.textContent = `Error: Please enter a draft of at least 20 characters to polish.`;
+                statusMessageBTech.className = 'mt-4 p-3 rounded-3 text-center alert alert-danger';
+                statusMessageBTech.classList.remove('d-none');
+                setTimeout(() => statusMessageBTech.classList.add('d-none'), 5000);
+                return;
+            }
+
+            polishButton.disabled = true;
+            polishButton.textContent = 'Analyzing...';
+            polishStatus.textContent = 'Transmission initiated...';
+            polishStatus.classList.remove('d-none');
+            statusMessageBTech.classList.add('d-none'); // Hide previous success/error messages
+
+            const systemPrompt = "You are a professional career and research advisor. Your task is to take a raw message draft from a B.Tech student's portfolio contact form and rewrite it to be highly professional, formal, concise, and impactful. Focus the tone on seeking opportunities (internship, job, research collaboration) and highlight the student's relevance to the recipient. Do not use markdown (e.g., bolding or lists), just output the refined message text.";
+            
+            const userQuery = `Refine this message for a job/research contact form: "${originalText}"`;
+
+            const payload = {
+                contents: [{ parts: [{ text: userQuery }] }],
+                systemInstruction: {
+                    parts: [{ text: systemPrompt }]
+                },
+            };
+
+            try {
+                const response = await exponentialBackoffFetch(API_URL + apiKey, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+
+                const candidate = response.candidates?.[0];
+
+                if (candidate && candidate.content?.parts?.[0]?.text) {
+                    const refinedText = candidate.content.parts[0].text.trim();
+                    messageTextarea.value = refinedText; // Update the textarea with the polished message
+                    
+                    statusMessageBTech.textContent = `Success! Your message has been professionally polished. Review the draft before sending.`;
+                    statusMessageBTech.className = 'mt-4 p-3 rounded-3 text-center alert alert-info';
+                    statusMessageBTech.classList.remove('d-none');
+
+                } else {
+                    throw new Error("Invalid response structure from API.");
+                }
+
+            } catch (error) {
+                console.error("Gemini API Error:", error);
+                statusMessageBTech.textContent = `Error: Failed to polish message (Error Code: ${error.message}). Please try again shortly.`;
+                statusMessageBTech.className = 'mt-4 p-3 rounded-3 text-center alert alert-danger';
+                statusMessageBTech.classList.remove('d-none');
+            } finally {
+                polishButton.disabled = false;
+                polishButton.textContent = '✨ Polish Message Draft';
+                polishStatus.classList.add('d-none');
+            }
+        }
+
+
+        // --- Event Listeners ---
+        const formBTech = document.getElementById('contact-form-btech');
+        const statusMessageBTech = document.getElementById('status-message-btech');
+        const polishButton = document.getElementById('polish-button');
+
+        // 1. Attach listener for the AI Polisher button
+        polishButton.addEventListener('click', polishMessageDraft);
+
+
+        // 2. Original Form Submission Handler
+        formBTech.addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const name = document.getElementById('name-btech').value;
+            
+            // Show loading or processing status
+            statusMessageBTech.textContent = `Processing message...`;
+            statusMessageBTech.className = 'mt-4 p-3 rounded-3 text-center alert alert-info';
+            statusMessageBTech.classList.remove('d-none');
+
+
+            // Simulate API delay (replace with your actual backend submission)
+            setTimeout(() => {
+                statusMessageBTech.textContent = `Success, ${name}! Transmission confirmed. I'll get back to you soon.`;
+                statusMessageBTech.className = 'mt-4 p-3 rounded-3 text-center alert alert-success';
+
+                formBTech.reset();
+
+                setTimeout(() => {
+                    statusMessageBTech.classList.add('d-none');
+                }, 7000);
+
+            }, 1500);
+        });
+    </script>
+</body>
+</html>
