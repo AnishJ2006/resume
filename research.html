@@ -1,0 +1,897 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anish Jaiswal | Research & Collaboration Portal</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary-dark': '#0D0D19', // Deep space background
+                        'secondary-dark': '#1A1A2E', // Card background
+                        'accent-cyan': '#00FFFF', // Electric Cyan
+                        'accent-purple': '#9933FF', // Neon Purple
+                        'text-light': '#E0E0E0',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Global Styles */
+        html { scroll-behavior: smooth; }
+        body {
+            background-color: #0D0D19; /* Deep space background */
+            color: #E0E0E0; /* Light text */
+        }
+        
+        /* Futuristic Card Style (Applied to all main containers) */
+        .futuristic-card {
+            background-color: #1A1A2E;
+            border: 1px solid rgba(0, 255, 255, 0.3); /* Subtle Cyan border */
+            box-shadow: 0 0 8px rgba(0, 255, 255, 0.15);
+            transition: box-shadow 0.3s ease, transform 0.3s ease;
+        }
+        .futuristic-card:hover {
+            box-shadow: 0 0 15px #00FFFF, 0 0 25px #9933FF; /* Cyan/Purple Glow */
+        }
+
+        /* Hero Text and Headers */
+        .neon-text {
+            color: #00FFFF;
+            text-shadow: 0 0 5px rgba(0, 255, 255, 0.7);
+        }
+        .section-heading-futuristic {
+            border-bottom: 3px solid #00FFFF;
+            text-shadow: 0 0 5px #9933FF;
+            color: #E0E0E0;
+        }
+
+        /* Buttons and Links */
+        .cta-button {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 0 15px #00FFFF, 0 0 5px rgba(0, 255, 255, 0.5);
+        }
+
+        /* Form Control Overrides for Dark/Futuristic Look */
+        input, textarea {
+            background-color: #1A1A2E !important;
+            color: #E0E0E0 !important;
+            border-color: rgba(153, 51, 255, 0.5) !important; /* Light purple border */
+        }
+        input:focus, textarea:focus {
+            border-color: #9933FF !important; /* Solid purple focus */
+            box-shadow: 0 0 0 2px rgba(153, 51, 255, 0.5) !important;
+        }
+        
+        /* New Style for Result Content */
+        .result-content {
+            color: #9933FF; /* Neon Purple for generated text titles */
+        }
+    </style>
+</head>
+<body class="font-sans">
+
+    <!-- Navigation Bar -->
+    <nav class="sticky top-0 z-50 bg-secondary-dark shadow-xl border-b border-accent-cyan">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-4">
+                <a href="index.html" class="text-2xl font-extrabold text-text-light tracking-wide hover:text-accent-cyan transition duration-300">
+                    &larr; Portfolio <span class="neon-text">Home</span>
+                </a>
+
+                <!-- Desktop Navigation Links -->
+                <div class="hidden md:flex space-x-8 font-medium">
+                    <a href="#home" class="text-accent-cyan font-semibold transition duration-300">Research Intro</a>
+                    <a href="#about" class="text-text-light hover:text-accent-cyan transition duration-300">My Background</a>
+                    <a href="#research" class="text-text-light hover:text-accent-cyan transition duration-300">Focus Areas</a>
+                    <a href="#brainstorm" class="text-text-light hover:text-accent-cyan transition duration-300">Idea Generator</a>
+                    <a href="#connect" class="px-4 py-2 rounded-lg bg-accent-purple text-white hover:bg-accent-cyan hover:text-secondary-dark transition duration-300 shadow-lg">
+                        Collaborate Now
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-button" class="md:hidden text-text-light hover:text-accent-cyan focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu (Hidden by default) -->
+        <div id="mobile-menu" class="hidden md:hidden bg-secondary-dark border-t border-accent-cyan">
+            <a href="index.html" class="block py-3 px-4 text-accent-cyan font-semibold hover:bg-primary-dark border-b border-gray-700">&larr; Portfolio Home</a>
+            <a href="#about" class="block py-3 px-4 text-text-light hover:bg-primary-dark border-b border-gray-700">My Background</a>
+            <a href="#research" class="block py-3 px-4 text-text-light hover:bg-primary-dark border-b border-gray-700">Focus Areas</a>
+            <a href="#brainstorm" class="block py-3 px-4 text-text-light hover:bg-primary-dark border-b border-gray-700">Idea Generator</a>
+            <a href="#connect" class="block py-3 px-4 bg-accent-purple text-white font-semibold hover:bg-accent-cyan">Collaborate Now</a>
+        </div>
+    </nav>
+
+    <main>
+        <!-- 1. Hero Section -->
+        <section id="home" class="py-20 lg:py-32 bg-primary-dark text-white">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold mb-4 leading-tight">
+                    Research Collaboration <span class="neon-text">Interface</span>
+                </h1>
+                <p class="text-lg sm:text-xl lg:text-2xl font-light mb-8 max-w-3xl mx-auto opacity-70">
+                    Hello, I'm Anish Jaiswal, a dedicated B.Tech student and Research Enthusiast focused on building knowledge through partnership.
+                </p>
+                <a href="#connect" class="inline-block px-10 py-4 text-lg font-bold bg-accent-cyan rounded-xl shadow-lg hover:bg-accent-purple text-secondary-dark cta-button">
+                    Start a Research Partnership Today
+                </a>
+            </div>
+        </section>
+
+        <!-- 2. About Me Section (Research Context) -->
+        <section id="about" class="py-20 bg-secondary-dark">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold mb-2 section-heading-futuristic">MY RESEARCH PHILOSOPHY</h2>
+                    <p class="text-gray-400 text-lg">Blending academic rigor with innovative thinking.</p>
+                </div>
+                <div class="flex flex-col md:flex-row items-start space-y-8 md:space-y-0 md:space-x-12">
+                    <div class="w-full md:w-1/3 flex justify-center">
+                        <div class="w-48 h-48 rounded-full flex items-center justify-center overflow-hidden shadow-xl border-4 border-accent-cyan">
+                            <!-- UPDATED: Replaced SVG placeholder with an image tag -->
+                            <img src="AJ.jpg" 
+                                alt="Anish Jaiswal Profile Photo" 
+                                class="w-full h-full object-cover"
+                                onerror="this.onerror=null; this.src='https://placehold.co/192x192/1f1f1f/E0E0E0?text=AJ'"
+                            >
+                        </div>
+                    </div>
+                    <div class="w-full md:w-2/3">
+                        <p class="text-lg mb-4 leading-relaxed text-text-light">
+                            As a B.Tech student, I leverage my strong technical skills in data science and software development to contribute to meaningful research. My passion lies in translating complex theoretical models into testable, scalable implementations.
+                        </p>
+                        <p class="text-lg leading-relaxed text-gray-400">
+                            I am actively looking for mentors, advisors, and fellow students interested in pursuing high-impact projects. Whether you have a hypothesis needing a technical framework or data that requires novel analysis, let's connect and build something impactful together.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. Research Focus Section -->
+        <section id="research" class="py-20 bg-primary-dark">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold mb-2 section-heading-futuristic">CURRENT RESEARCH FOCUS</h2>
+                    <p class="text-gray-400 text-lg">Specific areas where I seek collaboration and intellectual challenge.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+                    <!-- Research Area Card 1 -->
+                    <div class="p-8 rounded-xl shadow-lg futuristic-card border-t-4 border-accent-cyan">
+                        <div class="text-4xl text-accent-cyan mb-4">
+                             <!-- Icon: Lightbulb -->
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-8 h-8"><path d="M15 14c.2-1 .3-2 0-4l2.5-3.5L15 2l-1 2-2-2-3.5 2-2.5-2L6 4l2-2-1.5 2.5L2 6l2 2-2 2h4l-2 2-2-2"></path></svg>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3 neon-text">Ethical AI in NLP</h3>
+                        <p class="text-gray-400" id="research-focus-1">Exploring bias detection and mitigation strategies in Large Language Models (LLMs) and localizing models for underrepresented languages.</p>
+                    </div>
+
+                    <!-- Research Area Card 2 -->
+                    <div class="p-8 rounded-xl shadow-lg futuristic-card border-t-4 border-accent-purple">
+                        <div class="text-4xl text-accent-purple mb-4">
+                            <!-- Icon: Leaf -->
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-8 h-8"><path d="M11 20A7 7 0 0 1 9 5c0-1.7-.3-2.5-1-3L2 5l1.4 1.4c-.6 1-.9 2.1-.9 3.2 0 4.2 3.8 7.6 8.5 7.6h.1v.1zM11 20a7 7 0 0 0 2 0v-.1c4.6 0 8.5-3.4 8.5-7.6 0-1.1-.3-2.2-.9-3.2L22 5l-6 1.5c-.7.5-1 1.3-1 3 0 1.7.3 2.5 1 3.5H11z"></path></svg>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3 neon-text">Green Computing & IoT</h3>
+                        <p class="text-gray-400" id="research-focus-2">Optimizing algorithms and hardware utilization to minimize energy consumption in distributed IoT networks for environmental monitoring.</p>
+                    </div>
+
+                    <!-- Research Area Card 3 -->
+                    <div class="p-8 rounded-xl shadow-lg futuristic-card border-t-4 border-accent-cyan">
+                        <div class="text-4xl text-accent-cyan mb-4">
+                            <!-- Icon: Users -->
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-8 h-8"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87m-4-1.29a2 2 0 0 0 0-2.58"></path></svg>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3 neon-text">Complex Network Analysis</h3>
+                        <p class="text-gray-400" id="research-focus-3">Applying graph theory and network science principles to study disease propagation models and social media influence structures.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- 4. Idea Incubation Center (LLM Features) -->
+        <section id="brainstorm" class="py-20 bg-secondary-dark">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold mb-2 section-heading-futuristic">IDEA INCUBATION CENTER</h2>
+                    <p class="text-gray-400 text-lg">Quickly develop a short idea into a structured research concept using AI tools.</p>
+                </div>
+
+                <div class="p-8 rounded-xl shadow-lg futuristic-card border-l-4 border-accent-purple">
+                    <div class="space-y-6">
+                        <div>
+                            <label for="research-topic" class="block text-lg font-medium text-text-light mb-2">Enter your core idea or hypothesis </label>
+                            <input type="text" id="research-topic" class="w-full px-4 py-3 rounded-lg focus:ring-accent-purple focus:border-accent-purple transition duration-200" placeholder="Type your research concept here...">
+                        </div>
+                        
+                        <!-- Buttons: Grid Layout for better visibility -->
+                        <div class="grid grid-cols-2 md:grid-cols-5 gap-3">
+                            <!-- FIXED: Use existing theme colors for better visual hierarchy -->
+                            <button type="button" id="generate-brief-button" class="py-3 text-sm font-bold text-secondary-dark bg-accent-cyan rounded-lg shadow-md hover:bg-accent-purple hover:text-white transition duration-300 cta-button">
+                                🧠 Structured Brief
+                            </button>
+                            <button type="button" id="expand-literature-button" class="py-3 text-sm font-bold text-white bg-accent-purple rounded-lg shadow-md hover:bg-accent-cyan hover:text-secondary-dark transition duration-300 cta-button">
+                                📚 Literature & Keywords
+                            </button>
+                            <button type="button" id="assess-risks-button" class="py-3 text-sm font-bold text-white bg-gray-800 rounded-lg shadow-md hover:bg-accent-cyan hover:text-secondary-dark transition duration-300 cta-button">
+                                🚨 Assess Feasibility & Risks
+                            </button>
+                            <button type="button" id="define-roles-button" class="py-3 text-sm font-bold text-white bg-accent-purple/70 rounded-lg shadow-md hover:bg-accent-cyan hover:text-secondary-dark transition duration-300 cta-button">
+                                🤝 Define Collaboration Roles
+                            </button>
+                            <button type="button" id="generate-summary-button" class="py-3 text-sm font-bold text-white bg-accent-cyan/70 rounded-lg shadow-md hover:bg-accent-purple hover:text-white transition duration-300 cta-button">
+                                🎤 Executive Summary
+                            </button>
+                        </div>
+                        
+                        <!-- Loading/Status indicator (shared) -->
+                        <div id="brief-status" class="text-center text-sm neon-text hidden">Processing concept...</div>
+
+                        <!-- Result Display Areas -->
+                        <div id="brief-result" class="mt-6 p-6 rounded-lg futuristic-card shadow-lg hidden">
+                            <h3 class="text-xl font-bold mb-3 result-content">Generated Project Brief:</h3>
+                            <pre id="brief-content" class="whitespace-pre-wrap text-text-light leading-relaxed"></pre>
+                            <button id="brief-retry-button" class="mt-4 px-4 py-2 text-sm font-bold text-white bg-red-700 rounded-lg shadow-md hover:bg-red-500 transition duration-300 hidden">
+                                Retry Structured Brief
+                            </button>
+                        </div>
+                        
+                        <div id="literature-result" class="mt-6 p-6 rounded-lg futuristic-card shadow-lg hidden">
+                            <h3 class="text-xl font-bold mb-3 result-content">Expanded Research Context:</h3>
+                            <pre id="literature-content" class="whitespace-pre-wrap text-text-light leading-relaxed"></pre>
+                            <button id="literature-retry-button" class="mt-4 px-4 py-2 text-sm font-bold text-white bg-red-700 rounded-lg shadow-md hover:bg-red-500 transition duration-300 hidden">
+                                Retry Literature Expansion
+                            </button>
+                        </div>
+                        
+                        <div id="risk-assessment-result" class="mt-6 p-6 rounded-lg futuristic-card shadow-lg hidden">
+                            <h3 class="text-xl font-bold mb-3 result-content">Feasibility & Risk Assessment:</h3>
+                            <pre id="risk-content" class="whitespace-pre-wrap text-text-light leading-relaxed"></pre>
+                            <button id="risk-retry-button" class="mt-4 px-4 py-2 text-sm font-bold text-white bg-red-700 rounded-lg shadow-md hover:bg-red-500 transition duration-300 hidden">
+                                Retry Feasibility Assessment
+                            </button>
+                        </div>
+                        
+                        <div id="collaboration-result" class="mt-6 p-6 rounded-lg futuristic-card shadow-lg hidden">
+                            <h3 class="text-xl font-bold mb-3 result-content">Project Collaboration Roles:</h3>
+                            <pre id="roles-content" class="whitespace-pre-wrap text-text-light leading-relaxed"></pre>
+                            <button id="roles-retry-button" class="mt-4 px-4 py-2 text-sm font-bold text-white bg-red-700 rounded-lg shadow-md hover:bg-red-500 transition duration-300 hidden">
+                                Retry Collaboration Roles
+                            </button>
+                        </div>
+                        
+                        <div id="executive-summary-result" class="mt-6 p-6 rounded-lg futuristic-card shadow-lg hidden">
+                            <h3 class="text-xl font-bold mb-3 result-content">Executive Summary Pitch:</h3>
+                            <pre id="summary-content" class="whitespace-pre-wrap text-text-light leading-relaxed"></pre>
+                            <button id="summary-retry-button" class="mt-4 px-4 py-2 text-sm font-bold text-white bg-red-700 rounded-lg shadow-md hover:bg-red-500 transition duration-300 hidden">
+                                Retry Executive Summary
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. Collaboration/Connect Section (Contact Form) -->
+        <section id="connect" class="py-20 bg-primary-dark">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-2xl">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold mb-2 section-heading-futuristic">INITIATE COLLABORATION</h2>
+                    <p class="text-gray-400 text-lg">Send me a detailed proposal for a joint project or mentorship opportunity.</p>
+                </div>
+
+                <div class="p-8 md:p-12 rounded-xl shadow-2xl futuristic-card border-t-8 border-accent-purple">
+                    <form id="contact-form" class="space-y-6">
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-text-light mb-1">Your Name</label>
+                            <input type="text" id="name" name="name" required class="w-full px-4 py-3 rounded-lg">
+                        </div>
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-text-light mb-1">Your Professional Email</label>
+                            <input type="email" id="email" name="email" required class="w-full px-4 py-3 rounded-lg">
+                        </div>
+                        <div>
+                            <label for="subject" class="block text-sm font-medium text-text-light mb-1">Subject</label>
+                            <input type="text" id="subject" name="subject" required class="w-full px-4 py-3 rounded-lg" placeholder="e.g., Joint Research Proposal on Ethical AI">
+                        </div>
+                        <div>
+                            <label for="message" class="block text-sm font-medium text-text-light mb-1">Project Details / Message</label>
+                            <textarea id="message" name="message" rows="5" required class="w-full px-4 py-3 rounded-lg"></textarea>
+                        </div>
+                        
+                        <!-- LLM Feature Button -->
+                        <div class="space-y-4 pt-2">
+                            <button type="button" id="review-button" class="w-full py-3 text-lg font-bold text-secondary-dark bg-accent-cyan rounded-lg shadow-md hover:bg-accent-purple hover:text-white transition duration-300 cta-button">
+                                ✨ Review Proposal Clarity
+                            </button>
+                        </div>
+
+                        <!-- AI Feedback Area (Hidden by default) -->
+                        <div id="ai-review-result" class="mt-4 p-4 rounded-lg bg-secondary-dark border border-accent-cyan text-sm hidden">
+                            <p id="review-text" class="text-text-light font-medium"></p>
+                            <p id="review-status" class="neon-text mt-2 hidden"></p>
+                        </div>
+
+                        <button type="submit" class="w-full py-3 text-lg font-bold text-secondary-dark bg-accent-purple rounded-lg shadow-md hover:bg-accent-cyan transition duration-300 cta-button">
+                            Transmit Collaboration Inquiry
+                        </button>
+                    </form>
+
+                    <div id="status-message" class="mt-6 hidden p-4 rounded-lg text-center" role="alert"></div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-secondary-dark text-white py-10 border-t border-accent-purple">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p class="text-sm text-gray-500 mb-4">Anish Jaiswal | B.Tech Research Enthusiast</p>
+            <p class="text-sm text-gray-500">&copy; 2025 All systems operational. | <a href="index.html" class="neon-text hover:text-accent-purple">Back to Portfolio Home</a></p>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Interactivity and Gemini API -->
+    <script>
+        // --- Gemini API Setup ---
+        const API_BASE_URL = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-05-20:generateContent';
+        const apiKey = "AIzaSyCQBJRxV3B9NKPv_ZokhCyNtK3ZFtdEgh4"; // Canvas will provide the key at runtime
+
+        // Function for exponential backoff fetch to handle potential API limits
+        async function exponentialBackoffFetch(options, maxRetries = 5) {
+            // Construct the full URL with the API key as a query parameter
+            const apiUrlWithKey = `${API_BASE_URL}?key=${apiKey}`;
+
+            for (let attempt = 0; attempt < maxRetries; attempt++) {
+                try {
+                    const response = await fetch(apiUrlWithKey, options);
+                    if (!response.ok) {
+                        // Retry on rate limit errors (429)
+                        if (response.status === 429 && attempt < maxRetries - 1) {
+                            const delay = Math.pow(2, attempt) * 1000 + Math.random() * 1000;
+                            await new Promise(resolve => setTimeout(resolve, delay));
+                            continue;
+                        }
+                        throw new Error(`HTTP error! status: ${response.status}`);
+                    }
+                    return response.json();
+                } catch (error) {
+                    if (attempt === maxRetries - 1) {
+                        throw error;
+                    }
+                    const delay = Math.pow(2, attempt) * 1000 + Math.random() * 1000;
+                    await new Promise(resolve => setTimeout(resolve, delay));
+                }
+            }
+        }
+        
+        // --- UTILITY: Function to hide all result sections in the Idea Incubation Center ---
+        function hideAllBrainstormResults() {
+            document.getElementById('brief-result').classList.add('hidden');
+            document.getElementById('literature-result').classList.add('hidden');
+            document.getElementById('risk-assessment-result').classList.add('hidden');
+            document.getElementById('collaboration-result').classList.add('hidden');
+            document.getElementById('executive-summary-result').classList.add('hidden');
+            
+            // Hide retry buttons
+            document.getElementById('brief-retry-button').classList.add('hidden');
+            document.getElementById('literature-retry-button').classList.add('hidden');
+            document.getElementById('risk-retry-button').classList.add('hidden');
+            document.getElementById('roles-retry-button').classList.add('hidden');
+            document.getElementById('summary-retry-button').classList.add('hidden');
+        }
+
+        // --- GEMINI FEATURE 1: PROPOSAL REVIEWER (In Connect Section) ---
+        async function reviewProposalClarity() {
+            const messageTextarea = document.getElementById('message');
+            const reviewButton = document.getElementById('review-button');
+            const aiReviewResultDiv = document.getElementById('ai-review-result');
+            const reviewText = document.getElementById('review-text');
+            const reviewStatus = document.getElementById('review-status');
+            const statusMessage = document.getElementById('status-message');
+            
+            const proposalText = messageTextarea.value.trim();
+            
+            // Minimal validation
+            if (proposalText.length < 50) {
+                statusMessage.textContent = 'Please enter a detailed proposal draft (at least 50 characters) before running the clarity check.';
+                statusMessage.className = 'mt-6 p-4 rounded-lg text-center bg-red-800 text-white';
+                statusMessage.classList.remove('hidden');
+                setTimeout(() => statusMessage.classList.add('hidden'), 5000);
+                return;
+            }
+
+            // Dynamically collect the research areas from the cards to ensure up-to-date context
+            const researchAreas = [
+                document.getElementById('research-focus-1').textContent.trim(),
+                document.getElementById('research-focus-2').textContent.trim(),
+                document.getElementById('research-focus-3').textContent.trim()
+            ].join(', ');
+            
+
+            // System instruction: Act as a Research Reviewer
+            const systemPrompt = `You are a professional research proposal reviewer. Analyze the user's proposal draft based on clarity, structure, and alignment with the stated research interests: ${researchAreas}. Respond ONLY with a concise, two-sentence summary: the first sentence must highlight the proposal's main strength, and the second must offer one actionable suggestion for improvement. Do not use formatting like bolding or lists.`;
+            
+            const userQuery = `Review this draft proposal: "${proposalText}"`;
+
+            const payload = {
+                contents: [{ parts: [{ text: userQuery }] }],
+                systemInstruction: {
+                    parts: [{ text: systemPrompt }]
+                },
+            };
+
+            reviewButton.disabled = true;
+            reviewButton.textContent = 'Analyzing Proposal...';
+            reviewStatus.textContent = 'Connecting to AI Review Board...';
+            aiReviewResultDiv.classList.remove('hidden');
+            reviewStatus.classList.remove('hidden');
+            reviewText.textContent = 'Please wait...';
+            statusMessage.classList.add('hidden'); // Hide general form status
+
+            try {
+                const response = await exponentialBackoffFetch({
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+
+                const candidate = response.candidates?.[0];
+
+                if (candidate && candidate.content?.parts?.[0]?.text) {
+                    const feedback = candidate.content.parts[0].text.trim();
+                    reviewText.innerHTML = `<strong>Feedback:</strong> ${feedback}`;
+                    aiReviewResultDiv.classList.remove('border-red-500');
+                    aiReviewResultDiv.classList.add('border-accent-cyan');
+
+                } else {
+                    throw new Error("Invalid response structure from API.");
+                }
+
+            } catch (error) {
+                console.error("Gemini API Error:", error);
+                reviewText.textContent = `Error: Failed to fetch analysis. This is usually due to a temporary API issue or rate limit. Please try again in a moment.`;
+                aiReviewResultDiv.classList.remove('border-accent-cyan');
+                aiReviewResultDiv.classList.add('border-red-500');
+
+            } finally {
+                reviewButton.disabled = false;
+                reviewButton.textContent = '✨ Review Proposal Clarity';
+                reviewStatus.classList.add('hidden');
+            }
+        }
+        
+        // --- GEMINI FEATURE 2: RESEARCH IDEA GENERATOR (In Brainstorm Section) ---
+        async function generateProjectBrief() {
+            const topicInput = document.getElementById('research-topic');
+            const generateButton = document.getElementById('generate-brief-button');
+            const briefStatus = document.getElementById('brief-status');
+            const briefResultDiv = document.getElementById('brief-result');
+            const briefContent = document.getElementById('brief-content');
+            const retryButton = document.getElementById('brief-retry-button'); // NEW
+            const statusMessage = document.getElementById('status-message');
+
+            const topic = topicInput.value.trim();
+            
+            if (topic.length < 10) {
+                statusMessage.textContent = 'Please enter a more descriptive research topic or hypothesis (at least 10 characters).';
+                statusMessage.className = 'mt-6 p-4 rounded-lg text-center bg-red-800 text-white';
+                statusMessage.classList.remove('hidden');
+                setTimeout(() => statusMessage.classList.add('hidden'), 5000);
+                return;
+            }
+
+            // Clean up UI for start
+            hideAllBrainstormResults(); 
+            briefContent.textContent = '';
+            retryButton.classList.add('hidden');
+            briefResultDiv.classList.remove('hidden');
+
+            // Set loading state
+            generateButton.disabled = true;
+            generateButton.textContent = 'Generating...';
+            briefStatus.textContent = 'Generating structured brief...';
+            briefStatus.classList.remove('hidden');
+            statusMessage.classList.add('hidden');
+
+            try {
+                const systemPrompt = "You are a research architect. Take the provided topic/hypothesis and expand it into a structured, formal research project brief. The output must contain only the brief, formatted with clear headings for '1. Research Objectives', '2. Proposed Methodology', and '3. Expected Outcomes'.";
+                const userQuery = `Create a structured research project brief based on this topic: "${topic}"`;
+                
+                const payload = {
+                    contents: [{ parts: [{ text: userQuery }] }],
+                    systemInstruction: { parts: [{ text: systemPrompt }] },
+                };
+
+                const response = await exponentialBackoffFetch({
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+
+                const candidate = response.candidates?.[0];
+
+                if (candidate && candidate.content?.parts?.[0]?.text) {
+                    const brief = candidate.content.parts[0].text.trim();
+                    briefContent.textContent = brief;
+                    statusMessage.textContent = 'Project brief successfully generated! Scroll down to review.';
+                    statusMessage.className = 'mt-6 p-4 rounded-lg text-center bg-accent-cyan text-secondary-dark';
+                    statusMessage.classList.remove('hidden');
+                } else {
+                    throw new Error("Invalid response structure from API.");
+                }
+
+            } catch (error) {
+                console.error("Gemini API Error:", error);
+                briefContent.textContent = `Error: Failed to generate brief. This is usually due to a temporary API issue or rate limit. Please try again.`;
+                retryButton.classList.remove('hidden'); // Show retry button on failure
+            } finally {
+                generateButton.disabled = false;
+                generateButton.textContent = '🧠 Structured Brief';
+                briefStatus.classList.add('hidden');
+            }
+        }
+        
+        // --- GEMINI FEATURE 3: LITERATURE & KEYWORDS EXPANDER (In Brainstorm Section) ---
+        async function expandLiteratureAndKeywords() {
+            const topicInput = document.getElementById('research-topic');
+            const expandButton = document.getElementById('expand-literature-button');
+            const briefStatus = document.getElementById('brief-status');
+            const literatureResultDiv = document.getElementById('literature-result');
+            const literatureContent = document.getElementById('literature-content');
+            const retryButton = document.getElementById('literature-retry-button'); // NEW
+            const statusMessage = document.getElementById('status-message');
+
+            const topic = topicInput.value.trim();
+            
+            if (topic.length < 10) {
+                statusMessage.textContent = 'Please enter a research topic first (at least 10 characters).';
+                statusMessage.className = 'mt-6 p-4 rounded-lg text-center bg-red-800 text-white';
+                statusMessage.classList.remove('hidden');
+                setTimeout(() => statusMessage.classList.add('hidden'), 5000);
+                return;
+            }
+
+            // Clean up UI for start
+            hideAllBrainstormResults(); 
+            literatureContent.textContent = '';
+            retryButton.classList.add('hidden');
+            literatureResultDiv.classList.remove('hidden');
+
+            // Set loading state
+            expandButton.disabled = true;
+            expandButton.textContent = 'Searching...';
+            briefStatus.textContent = 'Generating literature context...';
+            briefStatus.classList.remove('hidden');
+            statusMessage.classList.add('hidden'); 
+
+            try {
+                const systemPrompt = "You are an expert research librarian. Based on the provided topic, generate three structured sections: 1. Core Theoretical Concepts (3-5 items), 2. Potential Research Keywords (3-5 items for literature search), and 3. Related Landmark Papers/Authors (3-5 examples of hypothetical key works in the field). Format the output using markdown lists and headings.";
+                const userQuery = `Generate supporting literature and keywords for the research topic: "${topic}"`;
+
+                const payload = {
+                    contents: [{ parts: [{ text: userQuery }] }],
+                    systemInstruction: { parts: [{ text: systemPrompt }] },
+                };
+
+                const response = await exponentialBackoffFetch({
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+
+                const candidate = response.candidates?.[0];
+
+                if (candidate && candidate.content?.parts?.[0]?.text) {
+                    const literature = candidate.content.parts[0].text.trim();
+                    literatureContent.textContent = literature;
+                    statusMessage.textContent = 'Literature context successfully expanded! Scroll down to review.';
+                    statusMessage.className = 'mt-6 p-4 rounded-lg text-center bg-accent-cyan text-secondary-dark';
+                    statusMessage.classList.remove('hidden');
+                } else {
+                    throw new Error("Invalid response structure from API.");
+                }
+
+            } catch (error) {
+                console.error("Gemini API Error:", error);
+                literatureContent.textContent = `Error: Failed to expand literature. This is usually due to a temporary API issue or rate limit. Please try again.`;
+                retryButton.classList.remove('hidden'); // Show retry button on failure
+            } finally {
+                expandButton.disabled = false;
+                expandButton.textContent = '📚 Literature & Keywords';
+                briefStatus.classList.add('hidden');
+            }
+        }
+        
+        // --- GEMINI FEATURE 4: FEASIBILITY & RISK ASSESSMENT (In Brainstorm Section) ---
+        async function assessFeasibilityAndRisks() {
+            const topicInput = document.getElementById('research-topic');
+            const assessButton = document.getElementById('assess-risks-button');
+            const briefStatus = document.getElementById('brief-status');
+            const riskResultDiv = document.getElementById('risk-assessment-result');
+            const riskContent = document.getElementById('risk-content');
+            const retryButton = document.getElementById('risk-retry-button'); // NEW
+            const statusMessage = document.getElementById('status-message');
+
+            const topic = topicInput.value.trim();
+            
+            if (topic.length < 10) {
+                statusMessage.textContent = 'Please enter a research topic first (at least 10 characters).';
+                statusMessage.className = 'mt-6 p-4 rounded-lg text-center bg-red-800 text-white';
+                statusMessage.classList.remove('hidden');
+                setTimeout(() => statusMessage.classList.add('hidden'), 5000);
+                return;
+            }
+
+            // Clean up UI for start
+            hideAllBrainstormResults(); 
+            riskContent.textContent = '';
+            retryButton.classList.add('hidden');
+            riskResultDiv.classList.remove('hidden');
+
+            // Set loading state
+            assessButton.disabled = true;
+            assessButton.textContent = 'Assessing...';
+            briefStatus.textContent = 'Performing risk analysis...';
+            briefStatus.classList.remove('hidden');
+            statusMessage.classList.add('hidden'); 
+
+            try {
+                const systemPrompt = "You are a professional project risk analyst. Take the user's research topic and generate a structured assessment. The output must contain only the assessment, formatted with clear headings for '1. Key Technical/Resource Risks', '2. Ethical/Regulatory Challenges', and '3. Mitigation Strategies'.";
+                const userQuery = `Generate a risk and feasibility assessment for the research topic: "${topic}"`;
+
+                const payload = {
+                    contents: [{ parts: [{ text: userQuery }] }],
+                    systemInstruction: { parts: [{ text: systemPrompt }] },
+                };
+
+                const response = await exponentialBackoffFetch({
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+
+                const candidate = response.candidates?.[0];
+
+                if (candidate && candidate.content?.parts?.[0]?.text) {
+                    const assessment = candidate.content.parts[0].text.trim();
+                    riskContent.textContent = assessment;
+                    statusMessage.textContent = 'Risk assessment successfully completed! Scroll down to review.';
+                    statusMessage.className = 'mt-6 p-4 rounded-lg text-center bg-accent-cyan text-secondary-dark';
+                    statusMessage.classList.remove('hidden');
+                } else {
+                    throw new Error("Invalid response structure from API.");
+                }
+
+            } catch (error) {
+                console.error("Gemini API Error:", error);
+                riskContent.textContent = `Error: Failed to perform risk assessment. This is usually due to a temporary API issue or rate limit. Please try again.`;
+                retryButton.classList.remove('hidden'); // Show retry button on failure
+            } finally {
+                assessButton.disabled = false;
+                assessButton.textContent = '🚨 Assess Feasibility & Risks';
+                briefStatus.classList.add('hidden');
+            }
+        }
+        
+        // --- GEMINI FEATURE 5: COLLABORATION ROLES DEFINER (In Brainstorm Section) ---
+        async function defineCollaborationRoles() {
+            const topicInput = document.getElementById('research-topic');
+            const defineButton = document.getElementById('define-roles-button');
+            const briefStatus = document.getElementById('brief-status');
+            const collaborationResultDiv = document.getElementById('collaboration-result');
+            const rolesContent = document.getElementById('roles-content');
+            const retryButton = document.getElementById('roles-retry-button'); // NEW
+            const statusMessage = document.getElementById('status-message');
+
+            const topic = topicInput.value.trim();
+            
+            if (topic.length < 10) {
+                statusMessage.textContent = 'Please enter a research topic first (at least 10 characters).';
+                statusMessage.className = 'mt-6 p-4 rounded-lg text-center bg-red-800 text-white';
+                statusMessage.classList.remove('hidden');
+                setTimeout(() => statusMessage.classList.add('hidden'), 5000);
+                return;
+            }
+
+            // Clean up UI for start
+            hideAllBrainstormResults(); 
+            rolesContent.textContent = '';
+            retryButton.classList.add('hidden');
+            collaborationResultDiv.classList.remove('hidden');
+
+            // Set loading state
+            defineButton.disabled = true;
+            defineButton.textContent = 'Defining Roles...';
+            briefStatus.textContent = 'Mapping team requirements...';
+            briefStatus.classList.remove('hidden');
+            statusMessage.classList.add('hidden'); 
+
+            try {
+                const systemPrompt = "You are a professional project manager and HR specialist for a research team. Based on the user's research topic, define three essential collaboration roles needed for execution. For each role, provide the Title and a bulleted list of 3-4 Key Skills Required. The output must be structured with clear headings for each role.";
+                const userQuery = `Define the necessary collaboration roles and skills for a project on the topic: "${topic}"`;
+
+                const payload = {
+                    contents: [{ parts: [{ text: userQuery }] }],
+                    systemInstruction: { parts: [{ text: systemPrompt }] },
+                };
+
+                const response = await exponentialBackoffFetch({
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+
+                const candidate = response.candidates?.[0];
+
+                if (candidate && candidate.content?.parts?.[0]?.text) {
+                    const roles = candidate.content.parts[0].text.trim();
+                    rolesContent.textContent = roles;
+                    statusMessage.textContent = 'Collaboration roles successfully defined! Scroll down to review.';
+                    statusMessage.className = 'mt-6 p-4 rounded-lg text-center bg-accent-cyan text-secondary-dark';
+                    statusMessage.classList.remove('hidden');
+                } else {
+                    throw new Error("Invalid response structure from API.");
+                }
+
+            } catch (error) {
+                console.error("Gemini API Error:", error);
+                rolesContent.textContent = `Error: Failed to define collaboration roles. This is usually due to a temporary API issue or rate limit. Please try again.`;
+                retryButton.classList.remove('hidden'); // Show retry button on failure
+            } finally {
+                defineButton.disabled = false;
+                defineButton.textContent = '🤝 Define Collaboration Roles';
+                briefStatus.classList.add('hidden');
+            }
+        }
+        
+        // --- GEMINI FEATURE 6: EXECUTIVE SUMMARY GENERATOR (In Brainstorm Section) ---
+        async function generateExecutiveSummary() {
+            const topicInput = document.getElementById('research-topic');
+            const summaryButton = document.getElementById('generate-summary-button');
+            const briefStatus = document.getElementById('brief-status');
+            const summaryResultDiv = document.getElementById('executive-summary-result');
+            const summaryContent = document.getElementById('summary-content');
+            const retryButton = document.getElementById('summary-retry-button'); // NEW
+            const statusMessage = document.getElementById('status-message');
+
+            const topic = topicInput.value.trim();
+            
+            if (topic.length < 10) {
+                statusMessage.textContent = 'Please enter a research topic first (at least 10 characters).';
+                statusMessage.className = 'mt-6 p-4 rounded-lg text-center bg-red-800 text-white';
+                statusMessage.classList.remove('hidden');
+                setTimeout(() => statusMessage.classList.add('hidden'), 5000);
+                return;
+            }
+
+            // Clean up UI for start
+            hideAllBrainstormResults(); 
+            summaryContent.textContent = '';
+            retryButton.classList.add('hidden');
+            summaryResultDiv.classList.remove('hidden');
+
+            // Set loading state
+            summaryButton.disabled = true;
+            summaryButton.textContent = 'Summarizing...';
+            briefStatus.textContent = 'Drafting executive summary...';
+            briefStatus.classList.remove('hidden');
+            statusMessage.classList.add('hidden'); 
+
+            try {
+                const systemPrompt = "You are a professional research grant writer. Take the user's research topic and generate a high-impact, compelling executive summary (maximum 100 words). The summary must highlight the problem, the solution's novelty, and the expected impact. Output only the summary.";
+                const userQuery = `Generate an executive summary for the research topic: "${topic}"`;
+
+                const payload = {
+                    contents: [{ parts: [{ text: userQuery }] }],
+                    systemInstruction: { parts: [{ text: systemPrompt }] },
+                };
+
+                const response = await exponentialBackoffFetch({
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+
+                const candidate = response.candidates?.[0];
+
+                if (candidate && candidate.content?.parts?.[0]?.text) {
+                    const summary = candidate.content.parts[0].text.trim();
+                    summaryContent.textContent = summary;
+                    statusMessage.textContent = 'Executive summary successfully generated! Scroll down to review.';
+                    statusMessage.className = 'mt-6 p-4 rounded-lg text-center bg-accent-cyan text-secondary-dark';
+                    statusMessage.classList.remove('hidden');
+                } else {
+                    throw new Error("Invalid response structure from API.");
+                }
+
+            } catch (error) {
+                console.error("Gemini API Error:", error);
+                summaryContent.textContent = `Error: Failed to generate executive summary. This is usually due to a temporary API issue or rate limit. Please try again.`;
+                retryButton.classList.remove('hidden'); // Show retry button on failure
+            } finally {
+                summaryButton.disabled = false;
+                summaryButton.textContent = '🎤 Executive Summary';
+                briefStatus.classList.add('hidden');
+            }
+        }
+
+
+        // --- Event Listeners and General Functions ---
+        
+        // Mobile Menu Toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when a link is clicked
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById('mobile-menu').classList.add('hidden');
+            });
+        });
+        
+        // Attach listeners for all AI feature buttons
+        document.getElementById('review-button').addEventListener('click', reviewProposalClarity);
+        document.getElementById('generate-brief-button').addEventListener('click', generateProjectBrief);
+        document.getElementById('expand-literature-button').addEventListener('click', expandLiteratureAndKeywords);
+        document.getElementById('assess-risks-button').addEventListener('click', assessFeasibilityAndRisks);
+        document.getElementById('define-roles-button').addEventListener('click', defineCollaborationRoles);
+        document.getElementById('generate-summary-button').addEventListener('click', generateExecutiveSummary);
+
+        // Attach listeners for retry buttons (using the original function)
+        document.getElementById('brief-retry-button').addEventListener('click', generateProjectBrief);
+        document.getElementById('literature-retry-button').addEventListener('click', expandLiteratureAndKeywords);
+        document.getElementById('risk-retry-button').addEventListener('click', assessFeasibilityAndRisks);
+        document.getElementById('roles-retry-button').addEventListener('click', defineCollaborationRoles);
+        document.getElementById('summary-retry-button').addEventListener('click', generateExecutiveSummary);
+
+
+        // Contact Form Handling (Simulated)
+        const form = document.getElementById('contact-form');
+        const statusMessage = document.getElementById('status-message');
+
+        form.addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const name = document.getElementById('name').value;
+
+            // Show loading or processing status
+            statusMessage.textContent = `Processing inquiry...`;
+            statusMessage.className = 'mt-6 p-4 rounded-lg text-center bg-accent-purple text-white';
+            statusMessage.classList.remove('hidden');
+
+            // Simulate API delay (replace with your actual backend submission)
+            setTimeout(() => {
+                statusMessage.textContent = `Transmission Complete, ${name}! Your collaboration inquiry has been received. I will respond to your professional email shortly.`;
+                statusMessage.className = 'mt-6 p-4 rounded-lg text-center bg-accent-cyan text-secondary-dark';
+
+                form.reset();
+
+                setTimeout(() => {
+                    statusMessage.classList.add('hidden');
+                }, 7000);
+
+            }, 500);
+        });
+    </script>
+</body>
+</html>
